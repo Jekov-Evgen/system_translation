@@ -1,9 +1,9 @@
-from GUI.from_hexadecimal import FromHexadecimal
+from GUI.MainWindow.main_window import MainWindow
 from PyQt6.QtWidgets import QApplication
 
 if __name__ == "__main__":
     app = QApplication([])
     
-    start = FromHexadecimal()
+    start = MainWindow()
     
     app.exec()

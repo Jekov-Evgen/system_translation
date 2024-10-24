@@ -1,10 +1,11 @@
 from PyQt6.QtWidgets import QLabel, QVBoxLayout, QPushButton, QMainWindow, QLineEdit, QWidget
-
+from GUI.style import CONST_WINDOW
 
 class FromBinary(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
         self.setFixedSize(450, 450)
+        self.setStyleSheet(CONST_WINDOW)
         
         control_UI = QVBoxLayout()
         central_widget = QWidget()
