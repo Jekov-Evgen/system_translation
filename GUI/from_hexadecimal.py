@@ -13,14 +13,14 @@ class FromHexadecimal(QMainWindow):
         instructions = QLabel(text="Введите ваше шестнадцатеричное число для перевода")
         entering_a_number = QLineEdit()
         binary = QPushButton(text="из шестнадцатеричного в двоичное")
-        decimal = QPushButton(text="из шестнадцатеричного в десятичное")
         octal = QPushButton(text="из шестнадцатеричного в восьмиричное")
+        decimal = QPushButton(text="из шестнадцатеричного в десятичное")
         
         control_UI.addWidget(instructions)
         control_UI.addWidget(entering_a_number)
         control_UI.addWidget(binary)
-        control_UI.addWidget(decimal)
         control_UI.addWidget(octal)
+        control_UI.addWidget(decimal)
         
         central_widget.setLayout(control_UI)
         

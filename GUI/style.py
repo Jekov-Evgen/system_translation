@@ -11,6 +11,7 @@ CONST_WINDOW = """
                 border: 1px solid #FFFFFF;
                 border-radius: 5px;
                 padding: 10px;
+                qproperty-alignment: 'AlignCenter';
             }
             QPushButton:hover {
                 background-color: #6E6E6E;
@@ -28,6 +29,7 @@ CONST_WINDOW = """
             QLabel {
                 font-size: 16px;
                 margin-bottom: 10px;
+                qproperty-alignment: 'AlignCenter';
             }
         """
         
