@@ -15,13 +15,13 @@ class FromBinary(QMainWindow):
         instructions = QLabel(text="Введите ваше бинарное число для перевода")
         entering_a_number = QLineEdit()
         
-        octal = QPushButton(text="из двоичного в восьмиричное")
+        octal = QPushButton(text="Из двоичного в восьмиричное")
         octal.clicked.connect(self.to_octal)
         
-        decimal = QPushButton(text="из двоичного в десятичное")
+        decimal = QPushButton(text="Из двоичного в десятичное")
         decimal.clicked.connect(self.to_decimal)
         
-        hexadecimal = QPushButton(text="из двоичного в шестнадцатеричное")
+        hexadecimal = QPushButton(text="Из двоичного в шестнадцатеричное")
         hexadecimal.clicked.connect(self.to_hexadecimal)
         
         control_UI.addWidget(instructions)
@@ -39,21 +39,21 @@ class FromBinary(QMainWindow):
     def to_octal(self):
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат")
+        self.result.setText("Результат из двоичного в восьмиричное")
         
         self.result.show()
         
     def to_decimal(self):
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат")
+        self.result.setText("Результат из двоичного в десятичное")
         
         self.result.show()
         
     def to_hexadecimal(self):
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат")
+        self.result.setText("Результат из двоичного в шестнадцатеричное")
         
         self.result.show()
         
