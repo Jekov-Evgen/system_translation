@@ -66,3 +66,35 @@ CONST_MAIN_WINDOW = """
                 alignment: 'AlignCenter';
             }
         """
+        
+CONST_RESULT_WINDOW = """
+            QMessageBox {
+                background-color: #2E2E2E;
+                color: #FFFFFF;
+                font-family: Arial;
+                font-size: 14px;
+                border: 1px solid #5A5A5A;
+                border-radius: 8px;
+            }
+            QMessageBox QLabel {
+                font-size: 16px;
+                color: #D3D3D3;
+                padding: 10px;
+                qproperty-alignment: 'AlignCenter';
+            }
+            QMessageBox QPushButton {
+                background-color: #4E4E4E;
+                color: #FFFFFF;
+                font-size: 14px;
+                border: 1px solid #FFFFFF;
+                border-radius: 5px;
+                padding: 8px 16px;
+                margin: 5px;
+            }
+            QMessageBox QPushButton:hover {
+                background-color: #6E6E6E;
+            }
+            QMessageBox QPushButton:pressed {
+                background-color: #5A5A5A;
+            }
+        """

@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QLabel, QVBoxLayout, QPushButton, QMainWindow, QLineEdit, QWidget, QMessageBox
-from GUI.style import CONST_WINDOW
+from GUI.style import CONST_WINDOW, CONST_RESULT_WINDOW
 from CallingFunctions.call_decimal import to_binary, to_octal, to_hex
 
 class FromDecimal(QMainWindow):
@@ -42,6 +42,7 @@ class FromDecimal(QMainWindow):
         call = to_binary(temp)
         
         self.result = QMessageBox()
+        self.result.setStyleSheet(CONST_RESULT_WINDOW)
         self.result.setWindowTitle("Окно результата")
         self.result.setText(call)
         
@@ -52,6 +53,7 @@ class FromDecimal(QMainWindow):
         call = to_octal(temp)
         
         self.result = QMessageBox()
+        self.result.setStyleSheet(CONST_RESULT_WINDOW)
         self.result.setWindowTitle("Окно результата")
         self.result.setText(call)
         
@@ -62,6 +64,7 @@ class FromDecimal(QMainWindow):
         call = to_hex(temp)
         
         self.result = QMessageBox()
+        self.result.setStyleSheet(CONST_RESULT_WINDOW)
         self.result.setWindowTitle("Окно результата")
         self.result.setText(call)
         
