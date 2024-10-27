@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import QLabel, QVBoxLayout, QPushButton, QMainWindow, QLineEdit, QWidget, QMessageBox
 from GUI.style import CONST_WINDOW
+from CallingFunctions.call_octal import to_binary
 
 class FromOctal(QMainWindow):
     def __init__(self) -> None:
@@ -12,8 +13,8 @@ class FromOctal(QMainWindow):
         control_UI = QVBoxLayout()
         central_widget = QWidget()
         
-        self.instructions = QLabel(text="Введите ваше восьмиричное число для перевода")
-        entering_a_number = QLineEdit()
+        instructions = QLabel(text="Введите ваше восьмиричное число для перевода")
+        self.entering_a_number = QLineEdit()
         binary = QPushButton(text="Из восьмиричного в двоичное")
         binary.clicked.connect(self.to_binary)
         
@@ -23,8 +24,8 @@ class FromOctal(QMainWindow):
         hexadecimal = QPushButton(text="Из восьмиричного в шестнадцатеричное")
         hexadecimal.clicked.connect(self.to_hexadecimal)
         
-        control_UI.addWidget(self.instructions)
-        control_UI.addWidget(entering_a_number)
+        control_UI.addWidget(instructions)
+        control_UI.addWidget(self.entering_a_number)
         control_UI.addWidget(binary)
         control_UI.addWidget(decimal)
         control_UI.addWidget(hexadecimal)
@@ -36,11 +37,12 @@ class FromOctal(QMainWindow):
         self.show()
         
     def to_binary(self):
-        call = self.instructions.text()
+        call = self.entering_a_number.text()
+        res = to_binary(call)
         
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат из восьмиричного в двоичное")
+        self.result.setText(res)
         
         self.result.show()
     
