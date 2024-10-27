@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import QLabel, QVBoxLayout, QPushButton, QMainWindow, QLineEdit, QWidget, QMessageBox
 from GUI.style import CONST_WINDOW
+from CallingFunctions.call_hex import to_binary, to_octal, to_decimal
 
 class FromHexadecimal(QMainWindow):
     def __init__(self) -> None:
@@ -13,7 +14,7 @@ class FromHexadecimal(QMainWindow):
         central_widget = QWidget()
         
         instructions = QLabel(text="Введите ваше шестнадцатеричное число для перевода")
-        entering_a_number = QLineEdit()
+        self.entering_a_number = QLineEdit()
         binary = QPushButton(text="Из шестнадцатеричного в двоичное")
         binary.clicked.connect(self.to_binary)
         
@@ -24,7 +25,7 @@ class FromHexadecimal(QMainWindow):
         decimal.clicked.connect(self.to_decimal)
         
         control_UI.addWidget(instructions)
-        control_UI.addWidget(entering_a_number)
+        control_UI.addWidget(self.entering_a_number)
         control_UI.addWidget(binary)
         control_UI.addWidget(octal)
         control_UI.addWidget(decimal)
@@ -36,22 +37,31 @@ class FromHexadecimal(QMainWindow):
         self.show()
         
     def to_binary(self):
+        temp = self.entering_a_number.text()
+        call = to_binary(temp)
+        
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат из шестнадцатеричного в двоичное")
+        self.result.setText(call)
         
         self.result.show()
         
     def to_octal(self):
+        temp = self.entering_a_number.text()
+        call = to_octal(temp)
+        
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат из шестнадцатеричного в восьмиричное")
+        self.result.setText(call)
         
         self.result.show()
         
     def to_decimal(self):
+        temp = self.entering_a_number.text()
+        call = to_decimal(temp)
+        
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат из шестнадцатеричного в десятичное")
+        self.result.setText(call)
         
         self.result.show()
