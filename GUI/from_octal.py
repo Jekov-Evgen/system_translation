@@ -1,4 +1,5 @@
 from PyQt6.QtWidgets import QLabel, QVBoxLayout, QPushButton, QMainWindow, QLineEdit, QWidget, QMessageBox
+from PyQt6.QtGui import QIcon
 from GUI.style import CONST_WINDOW, CONST_RESULT_WINDOW
 from CallingFunctions.call_octal import to_binary, to_decimal, to_hex
 
@@ -7,6 +8,8 @@ class FromOctal(QMainWindow):
         super().__init__()
         self.setFixedSize(450, 450)
         self.setStyleSheet(CONST_WINDOW)
+        img = 'Image/icon.png'
+        self.setWindowIcon(QIcon(img))
         
         self.result = None
         
@@ -41,7 +44,11 @@ class FromOctal(QMainWindow):
         call = to_binary(temp)
         
         self.result = QMessageBox()
+        
         self.result.setStyleSheet(CONST_RESULT_WINDOW)
+        img = 'Image/icon.png'
+        self.result.setWindowIcon(QIcon(img))
+        
         self.result.setWindowTitle("Окно результата")
         self.result.setText(call)
         
@@ -52,7 +59,11 @@ class FromOctal(QMainWindow):
         call = to_decimal(temp)
         
         self.result = QMessageBox()
+        
         self.result.setStyleSheet(CONST_RESULT_WINDOW)
+        img = 'Image/icon.png'
+        self.result.setWindowIcon(QIcon(img))
+        
         self.result.setWindowTitle("Окно результата")
         self.result.setText(call)
         
@@ -63,7 +74,11 @@ class FromOctal(QMainWindow):
         call = to_hex(temp)
         
         self.result = QMessageBox()
+        
         self.result.setStyleSheet(CONST_RESULT_WINDOW)
+        img = 'Image/icon.png'
+        self.result.setWindowIcon(QIcon(img))
+        
         self.result.setWindowTitle("Окно результата")
         self.result.setText(call)
         

@@ -1,4 +1,5 @@
-from PyQt6.QtWidgets import QLabel, QVBoxLayout, QPushButton, QMainWindow, QLineEdit, QWidget
+from PyQt6.QtWidgets import QLabel, QVBoxLayout, QPushButton, QMainWindow, QWidget
+from PyQt6.QtGui import QIcon
 from GUI.style import CONST_MAIN_WINDOW
 from GUI.from_binary import FromBinary
 from GUI.from_decimal import FromDecimal
@@ -10,6 +11,8 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setFixedSize(450, 450)
         self.setStyleSheet(CONST_MAIN_WINDOW)
+        img = 'Image/icon.png'
+        self.setWindowIcon(QIcon(img))
         
         self.from_bin = None
         self.from_dec = None
