@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QLabel, QVBoxLayout, QPushButton, QMainWindow, QLineEdit, QWidget, QMessageBox
 from GUI.style import CONST_WINDOW
-from CallingFunctions.call_octal import to_binary
+from CallingFunctions.call_octal import to_binary, to_decimal, to_hex
 
 class FromOctal(QMainWindow):
     def __init__(self) -> None:
@@ -47,15 +47,21 @@ class FromOctal(QMainWindow):
         self.result.show()
     
     def to_decimal(self):
+        call = self.entering_a_number.text()
+        res = to_decimal(call)
+        
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат из восьмиричного в десятичное")
+        self.result.setText(res)
         
         self.result.show()
     
     def to_hexadecimal(self):
+        call = self.entering_a_number.text()
+        res = to_hex(call)
+        
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат из восьмиричного в шестнадцатеричное")
+        self.result.setText(res)
         
         self.result.show()
