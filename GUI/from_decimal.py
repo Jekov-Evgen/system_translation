@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import QLabel, QVBoxLayout, QPushButton, QMainWindow, QLineEdit, QWidget, QMessageBox
 from GUI.style import CONST_WINDOW
+from CallingFunctions.call_decimal import to_binary, to_octal, to_hex
 
 class FromDecimal(QMainWindow):
     def __init__(self) -> None:
@@ -13,7 +14,7 @@ class FromDecimal(QMainWindow):
         central_widget = QWidget()
         
         instructions = QLabel(text="Введите ваше десятичное число для перевода")
-        entering_a_number = QLineEdit()
+        self.entering_a_number = QLineEdit()
         
         binary = QPushButton(text="Из десятичного в двоичное")
         binary.clicked.connect(self.to_binary)
@@ -25,7 +26,7 @@ class FromDecimal(QMainWindow):
         hexadecimal.clicked.connect(self.to_hexadecimal)
         
         control_UI.addWidget(instructions)
-        control_UI.addWidget(entering_a_number)
+        control_UI.addWidget(self.entering_a_number)
         control_UI.addWidget(binary)
         control_UI.addWidget(octal)
         control_UI.addWidget(hexadecimal)
@@ -37,22 +38,31 @@ class FromDecimal(QMainWindow):
         self.show()
         
     def to_binary(self):
+        temp = self.entering_a_number.text()
+        call = to_binary(temp)
+        
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат из десятичного в двоичное")
+        self.result.setText(call)
         
         self.result.show()
         
     def to_octal(self):
+        temp = self.entering_a_number.text()
+        call = to_octal(temp)
+        
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат из десятичного в восьмиричное")
+        self.result.setText(call)
         
         self.result.show()
         
     def to_hexadecimal(self):
+        temp = self.entering_a_number.text()
+        call = to_hex(temp)
+        
         self.result = QMessageBox()
         self.result.setWindowTitle("Окно результата")
-        self.result.setText("Результат из десятичного в шестнадцатеричное")
+        self.result.setText(call)
         
         self.result.show()
